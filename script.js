@@ -1,0 +1,1 @@
+console.log("LABUBU site loaded");
