@@ -3,103 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LABUBU — Meme Coin on Solana</title>
-  <meta name="description" content="Community-powered chaos. LABUBU is here to take over the meme world on Solana." />
+  <title>LABUBU — $LABU on Solana</title>
+  <meta name="description" content="LABUBU — community-powered meme coin on Solana." />
   <link rel="icon" href="favicon.png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <!-- NAV -->
-  <header class="nav">
-    <div class="nav__left">
-      <!-- если logo.png в корне репо -->
-      <img src="logo.png" alt="LABUBU" class="logo" />
-      <span class="brand">$LABU</span>
-    </div>
-    <nav class="nav__right">
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#how">How to Buy</a>
-      <a href="#roadmap">Roadmap</a>
-      <a class="btn btn--ghost" target="_blank" href="https://t.me/labubumemcoin">Telegram</a>
-      <!-- ВСТАВЬ свой mint ниже -->
-      <a class="btn" target="_blank" href="https://raydium.io/swap/?input=sol&output=<MINT_ADDRESS>">Buy $LABU</a>
-    </nav>
-  </header>
+<header class="nav reveal">
+  <div class="left">
+    <img src="logo.png" class="logo-sm float" alt="LABUBU">
+    <span class="brand">$LABU</span>
+  </div>
+  <nav class="right">
+    <a href="#how">How to Buy</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#chart">Live Chart</a>
+    <a href="#socials">Socials</a>
+    <a id="buyTop" class="btn btn-red" target="_blank" rel="noopener">Buy $LABU</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="glow"></div>
-    <div class="hero__card glass">
-      <div class="badge">Solana • Community</div>
-      <h1>LABUBU Meme Coin</h1>
-      <p class="sub">The community-driven chaos on Solana. No promises. Just vibes.</p>
-      <div class="cta">
-        <a class="btn" target="_blank" href="https://raydium.io/swap/?input=sol&output=<MINT_ADDRESS>">Buy on Raydium</a>
-        <a class="btn btn--ghost" target="_blank" href="https://solscan.io/token/<MINT_ADDRESS>">View on Solscan</a>
+<section class="hero">
+  <div class="bg-glow"></div>
+  <div class="hero-inner glass reveal-up">
+    <div class="hero-grid">
+      <div class="hero-logo">
+        <img src="logo.png" class="logo-big float" alt="LABUBU">
       </div>
-      <div class="socials">
-        <a target="_blank" href="https://www.tiktok.com/@labubu.meme">TikTok</a>
-        <span>·</span>
-        <a target="_blank" href="https://x.com/official_labubu">X</a>
-        <span>·</span>
-        <a target="_blank" href="https://t.me/labubumemcoin">Telegram</a>
-        <span>·</span>
-        <a target="_blank" href="https://www.instagram.com/labubu.meme">Instagram</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOKENOMICS -->
-  <section id="tokenomics" class="section">
-    <h2>Tokenomics</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="kpi">1,000,000,000</div>
-        <div class="kpi-sub">Total Supply</div>
-      </div>
-      <div class="card">
-        <div class="kpi">0%</div>
-        <div class="kpi-sub">Buy Tax</div>
-      </div>
-      <div class="card">
-        <div class="kpi">0%</div>
-        <div class="kpi-sub">Sell Tax</div>
-      </div>
-      <div class="card">
-        <div class="kpi">Locked</div>
-        <div class="kpi-sub">Liquidity</div>
+      <div class="hero-text">
+        <div class="pill">Solana • Community</div>
+        <h1 class="title">
+          <span class="purple">LABUBU</span>
+          <span id="typed" class="typed"></span>
+          <span class="cursor">|</span>
+        </h1>
+        <p class="sub">Chaos powered by community. No promises. Just vibes.</p>
+        <div class="cta">
+          <a id="buyMain" class="btn btn-red" target="_blank" rel="noopener">Buy on Raydium</a>
+          <a class="btn btn-ghost" id="solscanLink" target="_blank" rel="noopener">View on Solscan</a>
+          <a class="btn btn-ghost" id="pumpLink" target="_blank" rel="noopener">Buy on Pump.fun</a>
+        </div>
+        <div class="mint">
+          <code id="mintAddress"></code>
+          <button class="copy" onclick="copyMint()">Copy</button>
+        </div>
       </div>
     </div>
-    <p class="note">Fair launch. No roadmap promises = no expectations. Just fun.</p>
-  </section>
-
-  <!-- HOW TO BUY -->
-  <section id="how" class="section">
-    <h2>How to Buy</h2>
-    <ol class="steps">
-      <li>Install <b>Phantom</b> wallet & fund with SOL.</li>
-      <li>Click <b>Buy on Raydium</b> and confirm the swap to <code>$LABU</code>.</li>
-      <li>Pin the token in your wallet to track your bags.</li>
-    </ol>
-  </section>
-
-  <!-- ROADMAP -->
-  <section id="roadmap" class="section">
-    <h2>Roadmap (vibes only)</h2>
-    <div class="timeline">
-      <div class="tcard"><span>Phase 1</span><b>Launch</b> – Token live, socials, first memes.</div>
-      <div class="tcard"><span>Phase 2</span><b>Community</b> – TikTok pushes, contests, airdrops.</div>
-      <div class="tcard"><span>Phase 3</span><b>Listings</b> – Tools, trackers, CEX if vibes are right.</div>
+    <div class="social-inline">
+      <a href="https://www.tiktok.com/@labubu.meme" target="_blank" rel="noopener">TikTok</a>
+      <span>·</span>
+      <a href="https://x.com/official_labubu" target="_blank" rel="noopener">X</a>
+      <span>·</span>
+      <a href="https://t.me/labubumemcoin" target="_blank" rel="noopener">Telegram</a>
+      <span>·</span>
+      <a href="https://www.instagram.com/labubu.meme" target="_blank" rel="noopener">Instagram</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2025 LABUBU • Built with vibes on Solana.</p>
-  </footer>
-  <script src="script.js"></script>
+<section id="tokenomics" class="section">
+  <h2 class="reveal-up">Tokenomics</h2>
+  <div class="grid">
+    <div class="card reveal">
+      <div class="kpi">1,000,000,000</div>
+      <div class="kpi-sub">Total Supply $LABU</div>
+    </div>
+    <div class="card reveal">
+      <div class="kpi">0% / 0%</div>
+      <div class="kpi-sub">Buy / Sell Tax</div>
+    </div>
+    <div class="card reveal">
+      <div class="kpi">100%</div>
+      <div class="kpi-sub">Liquidity Locked</div>
+    </div>
+  </div>
+  <p class="note reveal-up">Fair launch. 100% community vibes.</p>
+</section>
+
+<section id="how" class="section">
+  <h2 class="reveal-up">How to Buy</h2>
+  <div class="grid grid-3">
+    <div class="step reveal">
+      <div class="num">1</div>
+      <h3>Get Phantom</h3>
+      <p>Install Phantom wallet and fund with SOL.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">2</div>
+      <h3>Swap</h3>
+      <p>Click “Buy on Raydium”. Paste our mint. Confirm.</p>
+    </div>
+    <div class="step reveal">
+      <div class="num">3</div>
+      <h3>Join</h3>
+      <p>Follow TikTok & Telegram. Post memes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap" class="section">
+  <h2 class="reveal-up">Roadmap</h2>
+  <div class="timeline">
+    <div class="tcard reveal"><span>Phase 1</span><b>Launch</b> — site, socials, first memes</div>
+    <div class="tcard reveal"><span>Phase 2</span><b>Virality</b> — TikTok push, contests, airdrops</div>
+    <div class="tcard reveal"><span>Phase 3</span><b>Listings</b> — trackers, partners, CEX (if vibe fits)</div>
+  </div>
+</section>
+
+<section id="chart" class="section">
+  <h2 class="reveal-up">Live Chart</h2>
+  <div class="chartWrap reveal">
+    <!-- DexScreener embed attempts to use token page; for some pools it may require the pair address -->
+    <iframe id="dexIframe" title="DexScreener"
+            loading="lazy" allowtransparency="true" frameborder="0"
+            src="" ></iframe>
+    <div class="chartFallback" id="chartFallback">
+      If the embed doesn't load, open the chart directly:
+      <a id="dexLink" target="_blank" rel="noopener">Open on DexScreener</a>
+    </div>
+  </div>
+</section>
+
+<section id="socials" class="section">
+  <h2 class="reveal-up">Socials</h2>
+  <div class="socials">
+    <a class="sbtn reveal" href="https://www.tiktok.com/@labubu.meme" target="_blank" rel="noopener">TikTok</a>
+    <a class="sbtn reveal" href="https://x.com/official_labubu" target="_blank" rel="noopener">X</a>
+    <a class="sbtn reveal" href="https://t.me/labubumemcoin" target="_blank" rel="noopener">Telegram</a>
+    <a class="sbtn reveal" href="https://www.instagram.com/labubu.meme" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 LABUBU — memes rule the market.</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
