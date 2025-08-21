@@ -1,0 +1,4 @@
+// EDIT JUST THIS LINE ↓↓↓
+window.LABU_CONFIG = {
+  mint: "MINT_ADDRESS_HERE"
+};
